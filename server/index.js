@@ -1,6 +1,5 @@
 // Import dependencies
 const express = require('express');
-const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
 
@@ -19,11 +18,10 @@ app.use((req, res, next) => {
 // Configure the CORs middleware
 app.use(cors());
 
-// use client/build later
-app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(__dirname, '../client/build')));
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+    res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
 });
 
 // Catch any bad requests

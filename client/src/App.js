@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-
+import Terminal from './pages/Terminal'
 import Login from './components/Login'
 import './App.css';
 import {
@@ -17,6 +17,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Login />
+          </Route>
+          <Route path={"/terminal"}>
+            <Terminal />
           </Route>
           {/* Redirecting non-matches to home */}
           <Route render={() => <Redirect to="/" />} />

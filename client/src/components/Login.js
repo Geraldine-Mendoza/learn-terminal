@@ -10,15 +10,17 @@ function Login() {
   async function anonymousSignIn() {
     await firebase.auth().signInAnonymously()
       .then(() => {
-        // Signed in..
-        auth.currentUser.getIdToken(true)
-        .then(token => {
-          console.log("successful auth as user " + token);
-          // save token to localStorage (can also send through url if easier)
-          localStorage.setItem("userToken", token);
-          // route to new page
-          history.push("/terminal");
-        })
+        firebase.auth().onAuthStateChanged((user) => {
+          if (user) {
+            // User is signed in, see docs for a list of available properties
+            // https://firebase.google.com/docs/reference/js/firebase.User
+            console.log("successful auth as user " + user.uid);
+            localStorage.setItem("userUid", user.uid);
+            history.push("/terminal");
+          } else {
+            // User is signed out
+          }
+        });
       })
       .catch((error) => {
         var errorCode = error.code;

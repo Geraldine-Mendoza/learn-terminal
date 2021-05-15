@@ -63,3 +63,15 @@
   -webkit-transform: scale(1.25, 1.25);
   transform: scale(1.25, 1.25);
 }
+
+.logout-btn {
+  display: flex;
+  padding: 1.6rem;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.125rem;
+  outline: none;
+  border: none;
+  color: rgb(76, 86, 106);
+  background-color: rgb(242, 244, 248);
+  cursor: pointer;
+}

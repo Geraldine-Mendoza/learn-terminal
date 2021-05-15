@@ -6,8 +6,9 @@ import Terminal from './pages/Terminal';
 import HomePage from './pages/HomePage';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
-import './App.css';
 import Navbar from './components/Navbar';
+import AppContext from './config/AppContext';
+import './App.css';
 
 function App() {
   const [user, setUser] = useState({});
@@ -31,22 +32,24 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar />
-        <Switch>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/signup">
-            <SignUp />
-          </Route>
-          <Route path={'/terminal'}>
-            <Terminal />
-          </Route>
-          {/* Redirecting non-matches to home */}
-          <Route render={() => <Redirect to="/" />}>
-            <HomePage />
-          </Route>
-        </Switch>
+        <AppContext.Provider value={[isLoggedin, user]}>
+          <Navbar />
+          <Switch>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+            <Route exact path="/signup">
+              <SignUp />
+            </Route>
+            <Route path={'/terminal'}>
+              <Terminal />
+            </Route>
+            {/* Redirecting non-matches to home */}
+            <Route render={() => <Redirect to="/" />}>
+              <HomePage />
+            </Route>
+          </Switch>
+        </AppContext.Provider>
       </Router>
     </div>
   );

@@ -1,9 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Logo from '../images/logo.svg';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import '../CSS/Navbar.css';
+import AppContext from '../config/AppContext';
+import { firebase } from '../config/firebase';
 
 export default function Navbar() {
+  const [isLoggedIn] = useContext(AppContext);
+  const history = useHistory();
+
+  function logout() {
+    firebase
+      .auth()
+      .signOut()
+      .then(res => {
+        history.replace('/login');
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
   return (
     <div className="navbar">
       <div className="nav-left">
@@ -25,9 +42,15 @@ export default function Navbar() {
           <Link to="/terminal" className="tab">
             Terminal
           </Link>
-          <Link to="/login" className="tab">
-            Login
-          </Link>
+          {isLoggedIn ? (
+            <Link className="tab" onClick={logout}>
+              LogOut
+            </Link>
+          ) : (
+            <Link to="/login" className="tab">
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </div>

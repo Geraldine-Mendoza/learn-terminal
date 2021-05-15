@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import HeroImage from '../images/heroImage.svg';
 import { firebase } from '../config/firebase';
 import '../CSS/SignUp.css';
 export default function SignUp() {
@@ -29,37 +30,44 @@ export default function SignUp() {
   }
 
   return (
-    <div className="signUp">
-      <div className="signUp-cover">
-        <div className="signUp-wrapper">
-          <div className="signUp-form">
-            <h1 className="signUp-header">SignUp</h1>
-            {err !== '' && <p>{err}</p>}
-            <form onSubmit={handleForm}>
-              <input
-                type="email"
-                className="input-field"
-                name="email"
-                placeholder="Email or Phone Number"
-                value={form.email}
-                onChange={handleInput}
-              />
-              <input
-                type="password"
-                className="input-field"
-                name="password"
-                placeholder="Password"
-                value={form.password}
-                onChange={handleInput}
-              />
-              <button type="submit" className="signUp-button">
-                {isLoading ? 'Signing Up' : 'SignUp'}
-              </button>
-            </form>
-            <div className="login-new">
-              <span>Already have an account?</span>
-              <Link className="login-link" to="/login">
-                Log in
+    <div className="signup">
+      <div className="signup-left">
+        <img src={HeroImage} alt="heroImage" className="hero-image" />
+      </div>
+      <div className="signup-right">
+        <div className="signup-container">
+          <div className="signup-form">
+            <div className={err ? 'signup-header remove-padding' : 'signup-header'}>SignUp</div>
+            <div className="signup-fields">
+              <form onSubmit={handleForm}>
+                {err !== '' && <p className="err-message">{err}</p>}
+                <input
+                  type="email"
+                  className="input-field"
+                  name="email"
+                  placeholder="Email"
+                  value={form.email}
+                  onChange={handleInput}
+                />
+                <input
+                  type="password"
+                  className="input-field"
+                  name="password"
+                  placeholder="Password"
+                  value={form.password}
+                  onChange={handleInput}
+                />
+                <div className="button-container">
+                  <button type="submit" className="signup-button">
+                    {isLoading ? 'Signing Up' : 'SignUp'}
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div className="sign-up-new">
+              <span>Already a User?</span>
+              <Link className="signup-link" to="/login">
+                Log In!
               </Link>
             </div>
           </div>

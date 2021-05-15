@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import './App.css';
+import Navbar from './components/Navbar';
 
 function App() {
   const [user, setUser] = useState({});
@@ -30,6 +31,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <Navbar />
         <Switch>
           <Route exact path="/login">
             <Login />

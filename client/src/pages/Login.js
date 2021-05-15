@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { firebase } from '../config/firebase';
+import HeroImage from '../images/heroImage.svg';
 import '../CSS/Login.css';
 
 function Login() {
@@ -62,36 +63,43 @@ function Login() {
 
   return (
     <div className="login">
-      <div className="login-cover">
-        <div className="login-wrapper">
+      <div className="login-left">
+        <img src={HeroImage} alt="heroImage" className="hero-image" />
+      </div>
+      <div className="login-right">
+        <div className="login-container">
           <div className="login-form">
-            <h1 className="login-header">LogIn</h1>
-            <form onSubmit={handleForm}>
-              {err !== '' && <p className="err-message">{err}</p>}
-              <input
-                type="email"
-                className="input-field"
-                name="email"
-                placeholder="Email or Phone Number"
-                value={form.email}
-                onChange={handleInput}
-              />
-              <input
-                type="password"
-                className="input-field"
-                name="password"
-                placeholder="Password"
-                value={form.password}
-                onChange={handleInput}
-              />
-              <button type="submit" className="login-button">
-                {isLoading ? 'Logging in' : 'Log In'}
-              </button>
-            </form>
+            <div className={err ? 'login-header remove-padding' : 'login-header'}>LogIn</div>
+            <div className="login-fields">
+              <form onSubmit={handleForm}>
+                {err !== '' && <p className="err-message">{err}</p>}
+                <input
+                  type="email"
+                  className="input-field"
+                  name="email"
+                  placeholder="Email"
+                  value={form.email}
+                  onChange={handleInput}
+                />
+                <input
+                  type="password"
+                  className="input-field"
+                  name="password"
+                  placeholder="Password"
+                  value={form.password}
+                  onChange={handleInput}
+                />
+                <div className="button-container">
+                  <button type="submit" className="login-button">
+                    {isLoading ? 'Logging in' : 'Login'}
+                  </button>
+                </div>
+              </form>
+            </div>
             <div className="sign-up-new">
               <span>New Here?</span>
-              <Link className="signup-link" to="/SignUp">
-                SignUp Now
+              <Link className="signup-link" to="/signup">
+                SignUp Now!
               </Link>
             </div>
           </div>

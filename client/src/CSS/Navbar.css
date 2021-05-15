@@ -1,0 +1,65 @@
+@import './nord.css';
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap');
+
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+  background-color: rgb(242, 244, 248);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo {
+  display: flex;
+  align-content: center;
+}
+
+.logo {
+  object-fit: contain;
+  height: 70px;
+}
+
+.nav-logoCaption {
+  font-family: 'Rubik';
+  padding-bottom: 8px;
+  padding-left: 7px;
+  align-items: center;
+  display: flex;
+  font-size: 1.758rem;
+  font-weight: 500;
+  color: rgb(76, 86, 106);
+}
+
+.nav-right {
+  display: flex;
+}
+
+.tab-container {
+  display: flex;
+}
+
+.tab {
+  display: flex;
+  padding: 1.6rem;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.125rem;
+  text-decoration: none;
+  color: rgb(76, 86, 106);
+  line-height: 1.5;
+  -webkit-transition: all 0.6s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: all 0.6s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.tab:hover {
+  -webkit-transform: scale(1.25, 1.25);
+  transform: scale(1.25, 1.25);
+}

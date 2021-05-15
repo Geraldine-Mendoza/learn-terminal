@@ -1,54 +1,86 @@
-.signUp-cover {
-  background-color: black;
+@import './nord.css';
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap');
+
+.signup {
+  background-color: rgb(242, 244, 248);
+  display: flex;
+}
+
+.signup-left {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
 }
 
-.signUp-wrapper {
-  color: white;
-  min-height: 660px;
+.signup-right {
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  flex-direction: column;
-  padding: 60px 68px 40px;
-  margin-bottom: 90px;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
-.signUp-header {
-  color: white;
-  margin-bottom: 0.8rem;
+.signup-container {
+  display: flex;
+  height: 400px !important;
+  width: 300px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.17);
 }
 
-.signUp-form {
+.signup-header {
+  padding-top: 50px;
+  padding-bottom: 25px;
+  font-family: 'Rubik';
+  font-size: 1.6rem;
+}
+
+.remove-padding {
+  padding-top: 20px !important;
+  padding-bottom: 5px !important;
+}
+
+.signup-form {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: auto auto;
+  height: 100%;
+  width: 100%;
+}
+
+.signup-fields {
+  width: 83%;
 }
 
 .input-field {
+  color: #3b4252;
   padding: 10px 15px;
   display: flex;
   flex-direction: column;
-  background-color: #303030;
+  justify-content: center;
+  background-color: #88c0d0;
   border: none;
   outline: none;
   margin: 10px 0px;
   border-radius: 3px;
-  height: 36px;
-  width: 300px;
   font-size: 18px;
 }
 
-.input-field:focus {
-  background-color: aliceblue;
-  color: #303030;
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.signUp-button {
-  background-color: red;
+.signup-button {
+  background-color: #3b4252;
   color: white;
+  width: 70%;
   height: 50px;
-  width: 332px;
   text-align: center;
   font-size: 18px;
   font-weight: 700;
@@ -63,32 +95,22 @@
   cursor: pointer;
 }
 
-.remember-me {
-  color: white;
-  display: flex;
-  align-items: center;
-}
-
-.remember-me > span {
-  padding-left: 11px;
-  padding-top: 0.6em;
-  font-size: 1.2rem;
-}
-
-.login-new {
-  margin-top: 50px;
+.sign-up-new {
+  font-family: 'Rubik';
+  margin-top: 20px;
+  font-weight: 500;
   text-align: left;
-  color: white;
+  color: #88c0d0;
   font-size: 1.2rem;
 }
 
-.login-link {
-  color: white !important;
+.signup-link {
+  color: #88c0d0 !important;
   padding-left: 7px;
   cursor: pointer;
   text-decoration: none;
 }
 
-.login-link:hover {
-  color: red !important;
+.signup-link:hover {
+  color: #3b4252 !important;
 }

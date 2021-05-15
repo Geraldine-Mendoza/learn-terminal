@@ -1,6 +1,7 @@
 // Import dependencies
 const express = require('express');
 const path = require('path');
+const { execCmd } = require('./command');
 
 // Create a new express application named 'app'
 const app = express();
@@ -17,9 +18,7 @@ app.use((req, res, next) => {
 // server-side rendering ~ no?
 //app.use(express.static(path.join(__dirname, '../client/build')));
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
-});
+app.get('/:cmd', execCmd);
 
 // Catch any bad requests
 app.get('*', (req, res) => {

@@ -1,11 +1,12 @@
+import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { firebase } from './config/firebase';
+
 import Terminal from './pages/Terminal';
 import HomePage from './pages/HomePage';
-import Login from './components/Login';
-import SignUp from './components/SignUp';
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
 import './App.css';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-import { firebase } from './components/firebase';
-import { useEffect, useState } from 'react';
 
 function App() {
   const [user, setUser] = useState({});

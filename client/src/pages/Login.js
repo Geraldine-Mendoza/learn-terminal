@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { firebase } from './firebase';
+import { firebase } from '../config/firebase';
 import '../CSS/Login.css';
 
 function Login() {

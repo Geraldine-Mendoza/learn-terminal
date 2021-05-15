@@ -1,0 +1,81 @@
+.login-cover {
+  background-color: black;
+  height: 100vh;
+}
+
+.login-wrapper {
+  color: white;
+  min-height: 660px;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  padding: 60px 68px 40px;
+  margin-bottom: 90px;
+}
+
+.login-header {
+  color: white;
+  margin-bottom: 0.8rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  margin: auto auto;
+}
+
+.input-field {
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  background-color: #303030;
+  border: none;
+  outline: none;
+  margin: 10px 0px;
+  border-radius: 3px;
+  height: 36px;
+  width: 300px;
+  font-size: 18px;
+}
+
+.err-message {
+  width: 300px;
+}
+
+.login-button {
+  background-color: red;
+  color: white;
+  height: 50px;
+  width: 332px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 13px;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+.sign-up-new {
+  margin-top: 50px;
+  text-align: left;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.signup-link {
+  color: white !important;
+  padding-left: 7px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.signup-link:hover {
+  color: red !important;
+}

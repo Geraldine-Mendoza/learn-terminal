@@ -3,6 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import HeroImage from '../images/heroImage.svg';
 import { firebase } from '../config/firebase';
 import '../CSS/SignUp.css';
+
 export default function SignUp() {
   const [form, setForm] = useState({ email: '', password: '' });
   const [isLoading, setIsLoading] = useState(false);

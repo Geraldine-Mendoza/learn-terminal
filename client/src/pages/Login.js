@@ -44,7 +44,7 @@ function Login() {
       <div className="login-right">
         <div className="login-container">
           <div className="login-form">
-            <div className={err ? 'login-header remove-padding' : 'login-header'}>LogIn</div>
+            <div className={err ? 'login-header remove-padding' : 'login-header'}>Log In</div>
             <div className="login-fields">
               <form onSubmit={handleForm}>
                 {err !== '' && <p className="err-message">{err}</p>}

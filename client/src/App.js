@@ -35,6 +35,9 @@ function App() {
         <AppContext.Provider value={[isLoggedin, user]}>
           <Navbar />
           <Switch>
+            <Route exact path="/">
+              <HomePage />
+            </Route>
             <Route exact path="/login">
               <Login />
             </Route>
@@ -45,9 +48,7 @@ function App() {
               <Terminal />
             </Route>
             {/* Redirecting non-matches to home */}
-            <Route render={() => <Redirect to="/" />}>
-              <HomePage />
-            </Route>
+            <Route render={() => <Redirect to="/" />} />
           </Switch>
         </AppContext.Provider>
       </Router>

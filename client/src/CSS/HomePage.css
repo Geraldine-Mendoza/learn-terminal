@@ -17,6 +17,38 @@
   cursor: pointer;
   margin: 10px;
 }
+.bash-button{
+  background-color: #3b4252;
+  color: white !important;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  display: flex;
+  padding-top: 13px;
+  margin-top: 2rem;
+  margin: 10px;
+  padding-left:2%;
+  text-decoration: none;
+}
+.bash{
+  padding-left:34%;
+  padding-top: 6%;
+  text-decoration: none;
+
+}
+.bash-link{
+  text-decoration: none;
+  color: white !important;
+  font-family: 'Rubik', sans-serif;
+
+  
+
+}
 
 .button-container {
   display: flex;
@@ -35,6 +67,7 @@ Link {
   padding:3%;
   margin:4%;
   font-weight:bold;
+  font-size:18px;
 
 }
 hr{
@@ -46,25 +79,23 @@ hr{
   height: 450px;
   padding-left: 1%;
   padding-right: 1%;
-  padding-top: 17%;
+  padding-top: 12%;
   float:right;
   text-align: center;
+  font-size:26px;
 
 }
 .bash-heading{
   width: 50%;
-  /* height: 450px; */
-  display: inline-block;
   padding-left:46%;
   color:#3B4252;
 
-
 }
 .bash-img{
-  overflow: hidden;
-  float: left;
+  object-fit:contain;
   height:600px;
   width:700px;
+  padding-left:3%;
 }
 .heading{
   color:#3B4252;

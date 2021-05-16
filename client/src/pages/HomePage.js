@@ -52,13 +52,44 @@ export default function HomePage() {
             {isLoading ? 'Loading...' : 'Quick Start'}</button>
           
         </div>
+        
           <br>
           </br>
           <hr></hr>
           <h1 className="bash-heading">BASH</h1>
-          <div className="bash-info">{Constants.BASH_INFO}</div>
+          <div className="bash-info">{Constants.BASH_INFO}
+
+          <div className="bash">
+          <button className="bash-button"  >
+          <Link to="/bash" className="bash-link"  style={{ textDecoration: 'none' }} >
+            Try bash Commands
+          </Link></button>
+        
+          </div>
+          
+          </div>
+         
           <img className="bash-img" src="https://miro.medium.com/max/4136/1*1BRXRhpRvv9jsxm0YIJbVA.png" ></img>
           </div>
+
+          <br>
+          </br>
+          <hr></hr>
+          <h1 className="bash-heading">GIT</h1>
+          <div className="bash-info">{Constants.GIT_INFO}
+
+          <div className="bash">
+          <button className="bash-button"  >
+          <Link to="/git" className="bash-link"  style={{ textDecoration: 'none' }}>
+            Try GIT Commands
+          </Link></button>
+        
+          </div>
+          
+          </div>
+         
+          <img className="bash-img" src="https://www.tutsmake.com/wp-content/uploads/2020/01/Essential-git-commands-every-developer-should-know.jpeg" ></img>
+          
       </div>
   );
 }

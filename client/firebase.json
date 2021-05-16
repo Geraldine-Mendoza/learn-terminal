@@ -1,0 +1,28 @@
+{
+  "hosting": {
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  },
+  "emulators": {
+    "auth": {
+      "port": 9099
+    },
+    "hosting": {
+      "port": 3000
+    },
+    "ui": {
+      "enabled": false
+    }
+  },
+  "remoteconfig": {
+    "template": "remoteconfig.template.json"
+  },
+  "rewrites": [ {
+    "source": "**",
+    "destination": "/index.html"
+  } ]
+}

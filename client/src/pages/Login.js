@@ -13,31 +13,6 @@ function Login() {
   // use to route within function
   const history = useHistory();
 
-  // ANONYMOUS : change to/add user+password
-  // async function anonymousSignIn() {
-  //   await firebase
-  //     .auth()
-  //     .signInAnonymously()
-  //     .then(() => {
-  //       firebase.auth().onAuthStateChanged(user => {
-  //         if (user) {
-  //           // User is signed in, see docs for a list of available properties
-  //           // https://firebase.google.com/docs/reference/js/firebase.User
-  //           console.log('successful auth as user ' + user.uid);
-  //           localStorage.setItem('userUid', user.uid);
-  //           history.push('/terminal');
-  //         } else {
-  //           // User is signed out
-  //         }
-  //       });
-  //     })
-  //     .catch(error => {
-  //       var errorCode = error.code;
-  //       var errorMessage = error.message;
-  //       console.log('error sign in: ' + error);
-  //     });
-  // }
-
   //Sign in with Email and password
   function handleForm(e) {
     if (isLoading) return;
@@ -69,7 +44,7 @@ function Login() {
       <div className="login-right">
         <div className="login-container">
           <div className="login-form">
-            <div className={err ? 'login-header remove-padding' : 'login-header'}>LogIn</div>
+            <div className={err ? 'login-header remove-padding' : 'login-header'}>Log In</div>
             <div className="login-fields">
               <form onSubmit={handleForm}>
                 {err !== '' && <p className="err-message">{err}</p>}

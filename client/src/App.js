@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { firebase } from './config/firebase';
+import { sendServerInfo } from './helper/serverInfo'
 
 import Terminal from './pages/Terminal';
 import HomePage from './pages/HomePage';
@@ -9,6 +10,7 @@ import SignUp from './pages/SignUp';
 import Navbar from './components/Navbar';
 import AppContext from './config/AppContext';
 import './App.css';
+import LearnPage from './pages/LearnPage';
 
 function App() {
   const [user, setUser] = useState({});
@@ -19,6 +21,8 @@ function App() {
       if (user) {
         setUser(user.uid);
         localStorage.setItem('uid', user.uid);
+        console.log(user.uid);
+        sendServerInfo(true, user.uid)
         setIsloggedin(true);
       } else {
         //for logout
@@ -35,19 +39,26 @@ function App() {
         <AppContext.Provider value={[isLoggedin, user]}>
           <Navbar />
           <Switch>
+            <Route exact path="/">
+              <HomePage />
+            </Route>
             <Route exact path="/login">
               <Login />
             </Route>
             <Route exact path="/signup">
               <SignUp />
             </Route>
+            <Route path='/bash'>
+              <LearnPage type='bash' />
+            </Route>
+            <Route path='/git'>
+              <LearnPage type='git' />
+            </Route>
             <Route path={'/terminal'}>
-              <Terminal />
+              <LearnPage type='terminal' />
             </Route>
             {/* Redirecting non-matches to home */}
-            <Route render={() => <Redirect to="/" />}>
-              <HomePage />
-            </Route>
+            <Route render={() => <Redirect to="/" />} />
           </Switch>
         </AppContext.Provider>
       </Router>

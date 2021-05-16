@@ -62,6 +62,8 @@
 .tab:hover {
   -webkit-transform: scale(1.25, 1.25);
   transform: scale(1.25, 1.25);
+  text-decoration: none;
+  color: rgb(76, 86, 106);
 }
 
 .logout-btn {

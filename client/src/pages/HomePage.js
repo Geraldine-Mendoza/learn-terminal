@@ -22,19 +22,18 @@ export default function HomePage() {
         firebase.auth().onAuthStateChanged(user => {
           if (user) {
             console.log('successful auth as user ' + user.uid);
-            localStorage.setItem('userUid', user.uid);
-            // pass information to server (assume get api url as result ?)
-            sendServerInfo(false, user)
             history.push('/terminal');
           } else {
             // User is signed out
           }
+          setIsLoading(false);
         });
       })
       .catch(error => {
         var errorCode = error.code;
         var errorMessage = error.message;
         console.log('error sign in: ' + error);
+        setIsLoading(false);
       });
   }
 
@@ -43,14 +42,17 @@ export default function HomePage() {
       {/* space for navbar */}
       <div style={{height: '80px'}}></div>
       <div className="section">
+        <div>Hack with Terminal</div>
         <div className="basic-info">{Constants.BASIC_INFO}</div>
         <div className="button-container">
-          <button onClick={anonymousSignIn} className='auth-button'>Free Trial</button>
+          <button onClick={anonymousSignIn} className='auth-button'>
+            {isLoading ? 'Loading...' : 'Quick Start'}</button>
           <Link to="/signup">
             <button className='auth-button'>Sign Up</button>
           </Link>
         </div>
       </div>
+
     </div>
   );
 }

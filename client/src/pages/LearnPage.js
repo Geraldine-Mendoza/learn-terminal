@@ -28,17 +28,8 @@ function LearnPage(props) {
     setCurrentPage(currentPage < numPages ? currentPage+1 : numPages)
   }
 
-  // make page 1 after types switches
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [props.type])
-
-  return (
-    <div>
-      {/* space for navbar -- for some reason needed in deployment, dont remove! */}
-      <div style={{height: '80px'}}></div>
-      <div className="top-container">
-        <div className="documentation">
+  var documentation = (
+    <div className="documentation">
         {arr[currentPage-1]}
         <div className="pages">
           <div>
@@ -50,6 +41,20 @@ function LearnPage(props) {
           </div>
         </div>
         </div>
+  )
+  if(props.type=='terminal') documentation = <div hidden></div>;
+
+  // make page 1 after types switches
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [props.type])
+
+  return (
+    <div>
+      {/* space for navbar -- for some reason needed in deployment, dont remove! */}
+      <div style={{height: '80px'}}></div>
+      <div className="top-container">
+        {documentation}
         <div className="terminal">
           {/* server: https://api.hackwithterminal.study/ttyd */}
           <iframe src="https://api.hackwithterminal.study/ttyd" width="100%" height="100%"></iframe>

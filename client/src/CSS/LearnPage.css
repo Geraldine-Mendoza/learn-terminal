@@ -4,6 +4,7 @@
 html {
   width: 100%;
   height: 100vh;
+  background-color: rgb(242, 244, 248);
 }
 
 .top-container {
@@ -12,22 +13,35 @@ html {
   align-items: center;
   justify-content: center;
   height: 85vh;
-
+  background-color: rgb(242, 244, 248);
 }
 
 .top-container > div {
   margin: 10px;
-  width: 100%;
   height: 100%;
 }
 
 .documentation {
+  width: 40%;
   background-color: white;
   position: relative;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.17);
+  font-family: 'Rubik', sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.documentation > p {
+  padding-top: 40px;
+  width: 90%;
+  font-size: 1.207rem;
+  line-height: 2;
 }
 
 .terminal {
   font-family: 'Rubik', sans-serif;
+  width: 60%;
 }
 
 iframe {
@@ -35,7 +49,7 @@ iframe {
 }
 
 code {
-  background-color: #D8DEE9;
+  background-color: #d8dee9;
 }
 
 .pages {

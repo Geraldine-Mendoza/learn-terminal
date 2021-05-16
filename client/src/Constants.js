@@ -74,6 +74,12 @@ const BASH_LEARN_2 = (
     Nobody wants a clutter in their system so to delete the non-important files you can use{' '}
     <code>
       rm {'<'}name of the file{'>'}.{'<'}extension{'>'}
+    </code>{' '}
+    <br />
+    Lets say, now you want to copy the file from one place to another. You can do that by using a
+    simple command <br />
+    <code>
+      cp {'<'}name of the file{'>'} {'<'}path of the directory where you to copy it to{'>'}
     </code>
   </p>
 );
@@ -85,6 +91,28 @@ export const GIT_LEARN = [
   <p>
     Let's start learning git by using it locally. <br />
     Make a new folder using <code>mkdir myCoolFolder</code> <br />
-    Go into the folder using <code>cd myCoolFolder</code>
+    Go into the folder using <code>cd myCoolFolder</code> <br></br>
+    Now to initialise the folder as a git repository use <code>git init</code> <br />
+    You might want to clone a repository that you already have instead of making a new one for that
+    you can use{' '}
+    <code>
+      git clone {'<'}url of repo{'>'}
+    </code>{' '}
+    <br />
+    In order to successfully commit the changes first you need to add the files in the staging are
+    by{' '}
+    <code>
+      git add {'<'}name of the file{'>'}
+    </code>{' '}
+    <br />
+    Or <br />
+    To add all the files we can use <code> git add * </code>
+    <br />
+    To commit the changes that we have made we use <br />
+    <code>
+      git commit -m {`"`}A message of your choice{`"`}
+    </code>
+    <br />
+    Now, Finally you would like to push the changes to repo by using <code>git push</code>
   </p>,
 ];

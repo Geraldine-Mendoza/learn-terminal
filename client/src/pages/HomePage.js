@@ -43,7 +43,7 @@ export default function HomePage() {
       {/* space for navbar -- for some reason needed in deployment, dont remove! */}
       <div style={{ height: '80px' }}></div>
       <div className="section">
-        <div><h1>Hack with Terminal</h1></div>
+        <div><h1 className="heading">Hack with Terminal</h1></div>
 
 
         <div className="basic-info">{Constants.BASIC_INFO}</div>
@@ -52,11 +52,13 @@ export default function HomePage() {
             {isLoading ? 'Loading...' : 'Quick Start'}</button>
           
         </div>
-        <div className="bash-heading">
           <br>
           </br>
-          <hr></hr><h1>BASH</h1></div>
+          <hr></hr>
+          <h1 className="bash-heading">BASH</h1>
+          <div className="bash-info">{Constants.BASH_INFO}</div>
+          <img className="bash-img" src="https://miro.medium.com/max/4136/1*1BRXRhpRvv9jsxm0YIJbVA.png" ></img>
+          </div>
       </div>
-    </div>
   );
 }

@@ -3,7 +3,6 @@ import Pagination from 'react-bootstrap/Pagination';
 import Axios from 'axios';
 import * as Constants from '../Constants';
 import '../CSS/LearnPage.css';
-import { response } from 'express';
 
 function LearnPage(props) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -52,26 +51,19 @@ function LearnPage(props) {
     setCurrentPage(1);
   }, [props.type]);
 
-  useEffect(() => {
-    const body = {
-      data: {
-        signIn: localStorage.getItem('signIn'),
-        uid: localStorage.getItem('uid'),
-      },
-    };
-
-    async function fetchAPI() {
-      await Axios.post('https://api.hackwithterminal.study/ttyd/login', body)
-        .then(res => res.json())
-        .then(res => setToken(res.data.token));
-    }
-    fetchAPI();
-    async function startContainer() {
-      await Axios.get(`https://api.hackwithterminal.study/ttyd/:${token}`);
-    }
-
-    startContainer();
-  }, [token]);
+  // useEffect(() => {
+  //   const body = {
+  //     data: {
+  //       signIn: localStorage.getItem('signIn'),
+  //       uid: localStorage.getItem('uid'),
+  //     },
+  //   };
+  //   async function fetchAPI() {
+  //     await Axios.post('https://api.hackwithterminal.study/ttyd/login', body)
+  //       .then()
+  //   }
+  //   fetchAPI();
+  // }, []);
 
   return (
     <div>
@@ -94,7 +86,7 @@ function LearnPage(props) {
         <div className="terminal">
           {/* server: https://api.hackwithterminal.study/ttyd */}
           <iframe
-            src="https://api.hackwithterminal.study/ttyd"
+            src="https://api.hackwithterminal.study/terminal/mlh/?port=7681"
             width="100%"
             height="100%"
             title="frame"

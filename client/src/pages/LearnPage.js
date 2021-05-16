@@ -28,6 +28,22 @@ function LearnPage(props) {
     setCurrentPage(currentPage < numPages ? currentPage + 1 : numPages);
   };
 
+  var documentation = (
+    <div className="documentation">
+      {arr[currentPage - 1]}
+      <div className="pages">
+        <div>
+          <Pagination>
+            <Pagination.Prev onClick={prevPage} />
+            {pages}
+            <Pagination.Next onClick={nextPage} />
+          </Pagination>
+        </div>
+      </div>
+    </div>
+  );
+  if (props.type === 'terminal') documentation = <div hidden></div>;
+
   // make page 1 after types switches
   useEffect(() => {
     setCurrentPage(1);
@@ -38,7 +54,7 @@ function LearnPage(props) {
       {/* space for navbar -- for some reason needed in deployment, dont remove! */}
       <div style={{ height: '80px' }}></div>
       <div className="top-container">
-        <div className="documentation">
+        {/* <div className="documentation">
           {arr[currentPage - 1]}
           <div className="pages">
             <div>
@@ -49,10 +65,16 @@ function LearnPage(props) {
               </Pagination>
             </div>
           </div>
-        </div>
+        </div> */}
+        {documentation}
         <div className="terminal">
           {/* server: https://api.hackwithterminal.study/ttyd */}
-          <iframe src="https://api.hackwithterminal.study/ttyd" width="100%" height="100%"></iframe>
+          <iframe
+            src="https://api.hackwithterminal.study/ttyd"
+            width="100%"
+            height="100%"
+            title="frame"
+          />
         </div>
       </div>
     </div>

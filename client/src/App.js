@@ -48,8 +48,8 @@ function App() {
             <Route exact path="/signup">
               <SignUp />
             </Route>
-            {/* maybe make terminal variant of LearnPage so that terminal
-            does not reset and crash on change page ?*/}
+            {/* TODO: make terminal variant of LearnPage so that terminal
+            does not reset when change page on nav !!! */}
             <Route path='/bash'>
               <LearnPage type='bash' />
             </Route>

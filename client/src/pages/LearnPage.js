@@ -3,28 +3,8 @@ import Pagination from 'react-bootstrap/Pagination'
 import * as Constants from '../Constants'
 import '../CSS/LearnPage.css';
 
-// function TutorialPage(curPage) {
-//   return Constants.BASH_LEARN[curPage-1];
-// }
-
-// function Pages() {
-//   const numPages = Constants.BASH_LEARN.length;
-//   var pages = [];
-//   for(let i = 1; i<=numPages; ++i) {
-//     pages.push(<Pagination.Item onClick={(e) => handlePageChange(i, e)}>{i}</Pagination.Item>)
-//   }
-//   return (
-//     <Pagination>
-//       <Pagination.Prev />  
-//       {pages}
-//       <Pagination.Next />
-//     </Pagination>
-//   )
-// }
-
 function LearnPage(props) {
   const [currentPage, setCurrentPage] = useState(1);
-  const [curType, setType] = useState(props.type);
   const arr = props.type=="bash" ? Constants.BASH_LEARN : Constants.GIT_LEARN;
   const numPages = arr.length;
   var pages = [];
@@ -50,12 +30,13 @@ function LearnPage(props) {
 
   // make page 1 after types switches
   useEffect(() => {
-    setType(props.type);
     setCurrentPage(1);
   }, [props.type])
 
   return (
     <div>
+      {/* space for navbar -- for some reason needed in deployment, dont remove! */}
+      <div style={{height: '80px'}}></div>
       <div className="top-container">
         <div className="documentation">
         {arr[currentPage-1]}
@@ -71,7 +52,7 @@ function LearnPage(props) {
         </div>
         <div className="terminal">
           {/* server: https://api.hackwithterminal.study/ttyd */}
-          <iframe src="./" width="100%" height="100%"></iframe>
+          <iframe src="https://api.hackwithterminal.study/ttyd" width="100%" height="100%"></iframe>
         </div>
       </div>
     </div>

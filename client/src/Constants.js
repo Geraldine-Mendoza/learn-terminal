@@ -10,7 +10,7 @@ export const GIT_INFO_MORE = "There are a lot of different ways to use Git. Ther
 /* tutorial sections : bash */
 const BASH_LEARN_1 = <p>Let's start with some of the fundamental commands you need to know to start learning bash.
 First, we'll learn about directories.<br/>
-You can make new directory using <code>mkdir {'<'}name of directory{'>'}</code>. <br />Try making a directory called <code>myFirstDirectory</code>"</p>
+You can make new directory using <code>mkdir {'<'}name of directory{'>'}</code>. <br />Try making a directory called <code>myFirstDirectory</code></p>
 const BASH_LEARN_2 = "2nd part"
 
 export const BASH_LEARN = [ BASH_LEARN_1, BASH_LEARN_2 ]

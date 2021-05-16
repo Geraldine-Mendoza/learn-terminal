@@ -39,7 +39,7 @@ export default function HomePage() {
 
   return (
     <div>
-      {/* space for navbar */}
+      {/* space for navbar -- for some reason needed in deployment, dont remove! */}
       <div style={{height: '80px'}}></div>
       <div className="section">
         <div>Hack with Terminal</div>

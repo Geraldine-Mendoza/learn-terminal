@@ -17,6 +17,9 @@
   cursor: pointer;
   margin: 10px;
 }
+.heading{
+  padding-top: 2%;
+}
 .bash-button{
   background-color: #3b4252;
   color: white !important;
@@ -87,6 +90,7 @@ hr{
 
 }
 .bash-heading{
+  padding-top: 3%;
   width: 50%;
   padding-left:46%;
   color:#3B4252;

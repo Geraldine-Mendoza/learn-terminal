@@ -13,7 +13,16 @@ First, we'll learn about directories.<br/>
 You can make new directory using <code>mkdir {'<'}name of directory{'>'}</code>. <br />Try making a directory called <code>myFirstDirectory</code>"</p>
 const BASH_LEARN_2 = "2nd part"
 
-export const BASH_LEARN = [ BASH_LEARN_1, BASH_LEARN_2]
+export const BASH_LEARN = [ BASH_LEARN_1, BASH_LEARN_2 ]
 
+/* tutorial sections : git */
+export const GIT_LEARN = [
+  <p>Let's start learning git by using it locally. <br />
+  Make a new folder using <code>mkdir myCoolFolder</code> <br />
+  Go into the folder using <code>cd myCoolFolder</code>
+  
+  </p>
+
+]
 
 

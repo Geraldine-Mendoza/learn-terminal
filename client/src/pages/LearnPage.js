@@ -1,11 +1,11 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Pagination from 'react-bootstrap/Pagination'
 import * as Constants from '../Constants'
-import '../CSS/BashPage.css';
+import '../CSS/LearnPage.css';
 
-function TutorialPage(curPage) {
-  return Constants.BASH_LEARN[curPage-1];
-}
+// function TutorialPage(curPage) {
+//   return Constants.BASH_LEARN[curPage-1];
+// }
 
 // function Pages() {
 //   const numPages = Constants.BASH_LEARN.length;
@@ -22,9 +22,11 @@ function TutorialPage(curPage) {
 //   )
 // }
 
-function BashPage() {
+function LearnPage(props) {
   const [currentPage, setCurrentPage] = useState(1);
-  const numPages = Constants.BASH_LEARN.length;
+  const [curType, setType] = useState(props.type);
+  const arr = props.type=="bash" ? Constants.BASH_LEARN : Constants.GIT_LEARN;
+  const numPages = arr.length;
   var pages = [];
   for(let i = 1; i<=numPages; ++i) {
     pages.push(<Pagination.Item onClick={(e) => handlePageChange(i, e)}>{i}</Pagination.Item>)
@@ -46,11 +48,17 @@ function BashPage() {
     setCurrentPage(currentPage < numPages ? currentPage+1 : numPages)
   }
 
+  // make page 1 after types switches
+  useEffect(() => {
+    setType(props.type);
+    setCurrentPage(1);
+  }, [props.type])
+
   return (
     <div>
       <div className="top-container">
         <div className="documentation">
-        {TutorialPage(currentPage)}
+        {arr[currentPage-1]}
         <div className="pages">
           <div>
           <Pagination>
@@ -70,4 +78,4 @@ function BashPage() {
   )
 }
 
-export default BashPage;
+export default LearnPage;

@@ -10,7 +10,7 @@ import SignUp from './pages/SignUp';
 import Navbar from './components/Navbar';
 import AppContext from './config/AppContext';
 import './App.css';
-import BashPage from './pages/BashPage';
+import LearnPage from './pages/LearnPage';
 
 function App() {
   const [user, setUser] = useState({});
@@ -48,8 +48,13 @@ function App() {
             <Route exact path="/signup">
               <SignUp />
             </Route>
+            {/* maybe make terminal variant of LearnPage so that terminal
+            does not reset and crash on change page ?*/}
             <Route path='/bash'>
-              <BashPage />
+              <LearnPage type='bash' />
+            </Route>
+            <Route path='/git'>
+              <LearnPage type='git' />
             </Route>
             <Route path={'/terminal'}>
               <Terminal />

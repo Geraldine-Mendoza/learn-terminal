@@ -48,8 +48,6 @@ function App() {
             <Route exact path="/signup">
               <SignUp />
             </Route>
-            {/* TODO: make terminal variant of LearnPage so that terminal
-            does not reset when change page on nav !!! */}
             <Route path='/bash'>
               <LearnPage type='bash' />
             </Route>
@@ -57,7 +55,7 @@ function App() {
               <LearnPage type='git' />
             </Route>
             <Route path={'/terminal'}>
-              <Terminal />
+              <LearnPage type='terminal' />
             </Route>
             {/* Redirecting non-matches to home */}
             <Route render={() => <Redirect to="/" />} />

@@ -29,3 +29,14 @@ Link {
   text-decoration: none;
 }
 
+.basic-info{
+  background-color:#81A1C1;
+  color:#ECEFF4;
+  padding:3%;
+  margin:4%;
+  font-weight:bold;
+}
+hr{
+  background-color:#3B4252;
+  height:3px;
+}

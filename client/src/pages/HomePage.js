@@ -42,15 +42,19 @@ export default function HomePage() {
       {/* space for navbar -- for some reason needed in deployment, dont remove! */}
       <div style={{height: '80px'}}></div>
       <div className="section">
-        <div>Hack with Terminal</div>
+        <div><h1>Hack with Terminal</h1></div>
+
+
         <div className="basic-info">{Constants.BASIC_INFO}</div>
         <div className="button-container">
           <button onClick={anonymousSignIn} className='auth-button'>
             {isLoading ? 'Loading...' : 'Quick Start'}</button>
-          <Link to="/signup">
-            <button className='auth-button'>Sign Up</button>
-          </Link>
+          
         </div>
+        <div className="bash-heading">
+          <br>
+          </br>
+          <hr></hr><h1>BASH</h1></div>
       </div>
 
     </div>

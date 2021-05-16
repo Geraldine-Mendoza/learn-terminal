@@ -1,5 +1,4 @@
 import React from 'react';
-import * as Constants from '../Constants';
 
 function Terminal() {
   return (

@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { firebase } from './config/firebase';
-import { sendServerInfo } from './helper/serverInfo'
+import { sendServerInfo } from './helper/serverInfo';
 
-import Terminal from './pages/Terminal';
 import HomePage from './pages/HomePage';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
@@ -22,7 +21,7 @@ function App() {
         setUser(user.uid);
         localStorage.setItem('uid', user.uid);
         console.log(user.uid);
-        sendServerInfo(true, user.uid)
+        sendServerInfo(true, user.uid);
         setIsloggedin(true);
       } else {
         //for logout
@@ -48,14 +47,14 @@ function App() {
             <Route exact path="/signup">
               <SignUp />
             </Route>
-            <Route path='/bash'>
-              <LearnPage type='bash' />
+            <Route path="/bash">
+              <LearnPage type="bash" />
             </Route>
-            <Route path='/git'>
-              <LearnPage type='git' />
+            <Route path="/git">
+              <LearnPage type="git" />
             </Route>
             <Route path={'/terminal'}>
-              <LearnPage type='terminal' />
+              <LearnPage type="terminal" />
             </Route>
             {/* Redirecting non-matches to home */}
             <Route render={() => <Redirect to="/" />} />

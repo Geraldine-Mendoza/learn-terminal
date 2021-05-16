@@ -5,13 +5,13 @@ const sendServerInfo = (signIn, uid) => {
   }
 
   // TODO: change url
-  fetch("/user-info", {
+  fetch("hackwithterminal.study/ttyd/login", {
     method: "POST",
     body: JSON.stringify(data)
   })
   .then(res => {
     console.log("res of request : " + res);
-    localStorage.setItem('terminalApi', res);
+    localStorage.setItem('token', res);
   })
 }
 

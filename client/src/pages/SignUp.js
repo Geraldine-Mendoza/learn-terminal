@@ -40,7 +40,7 @@ export default function SignUp() {
           <div className="signup-form">
             <div className={err ? 'signup-header remove-padding' : 'signup-header'}>SignUp</div>
             <div className="signup-fields">
-              <form onSubmit={handleForm}>
+              <form onSubmit={handleForm} className="form-fields">
                 {err !== '' && <p className="err-message">{err}</p>}
                 <input
                   type="email"

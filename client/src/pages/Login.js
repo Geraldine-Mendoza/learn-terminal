@@ -47,7 +47,7 @@ function Login() {
           <div className="login-form">
             <div className={err ? 'login-header remove-padding' : 'login-header'}>Log In</div>
             <div className="login-fields">
-              <form onSubmit={handleForm}>
+              <form onSubmit={handleForm} className="form-fields">
                 {err !== '' && <p className="err-message">{err}</p>}
                 <input
                   type="email"

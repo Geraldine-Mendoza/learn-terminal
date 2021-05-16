@@ -37,6 +37,17 @@
   font-size: 1.6rem;
 }
 
+.login-fields {
+  display: flex;
+  justify-content: center;
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .remove-padding {
   padding-top: 20px !important;
   padding-bottom: 5px !important;

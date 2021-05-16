@@ -22,6 +22,7 @@ function Login() {
       .auth()
       .signInWithEmailAndPassword(form.email, form.password)
       .then(res => {
+        console.log(res);
         history.replace('/home');
         setError('');
         setIsLoading(false);

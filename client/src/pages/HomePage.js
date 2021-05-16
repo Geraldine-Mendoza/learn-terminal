@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
 import { firebase } from '../config/firebase';
-import { sendServerInfo } from '../helper/serverInfo'
+import { sendServerInfo } from '../helper/serverInfo';
 import * as Constants from '../Constants';
 import '../CSS/HomePage.css';
 
@@ -13,12 +13,13 @@ export default function HomePage() {
 
   //ANONYMOUS authentication
   async function anonymousSignIn() {
-    if(isLoading) return;
+    if (isLoading) return;
     setIsLoading(true);
     await firebase
       .auth()
       .signInAnonymously()
-      .then(() => {
+      .then(res => {
+        console.log(res);
         firebase.auth().onAuthStateChanged(user => {
           if (user) {
             console.log('successful auth as user ' + user.uid);
@@ -40,7 +41,7 @@ export default function HomePage() {
   return (
     <div>
       {/* space for navbar -- for some reason needed in deployment, dont remove! */}
-      <div style={{height: '80px'}}></div>
+      <div style={{ height: '80px' }}></div>
       <div className="section">
         <div><h1>Hack with Terminal</h1></div>
 
@@ -56,7 +57,6 @@ export default function HomePage() {
           </br>
           <hr></hr><h1>BASH</h1></div>
       </div>
-
     </div>
   );
 }

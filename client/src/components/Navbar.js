@@ -22,7 +22,7 @@ export default function Navbar() {
   }
 
   return (
-    <div className="navbar">
+    <div className="custom-navbar">
       <div className="nav-left">
         <div className="nav-logo">
           <Link to="/" className="logo-link">

@@ -22,7 +22,7 @@ function Login() {
       .auth()
       .signInWithEmailAndPassword(form.email, form.password)
       .then(res => {
-        console.log(res);
+        localStorage.setItem('signIn', 'true');
         history.replace('/home');
         setError('');
         setIsLoading(false);

@@ -18,6 +18,7 @@ export default function HomePage() {
       .auth()
       .signInAnonymously()
       .then(res => {
+        localStorage.setItem('signIn', 'anon');
         history.push('/terminal');
         setIsLoading(false);
       })

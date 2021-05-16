@@ -27,6 +27,7 @@ function App() {
         //for logout
         setUser({});
         localStorage.removeItem('uid');
+        localStorage.setItem('signIn', false);
         setIsloggedin(false);
       }
     });

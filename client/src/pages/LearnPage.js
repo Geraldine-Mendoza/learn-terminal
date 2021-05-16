@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Pagination from 'react-bootstrap/Pagination';
+import Axios from 'axios';
 import * as Constants from '../Constants';
 import '../CSS/LearnPage.css';
+import { response } from 'express';
 
 function LearnPage(props) {
   const [currentPage, setCurrentPage] = useState(1);
+  const [token, setToken] = useState('');
   const arr = props.type === 'bash' ? Constants.BASH_LEARN : Constants.GIT_LEARN;
   const numPages = arr.length;
   var pages = [];
@@ -48,6 +51,27 @@ function LearnPage(props) {
   useEffect(() => {
     setCurrentPage(1);
   }, [props.type]);
+
+  useEffect(() => {
+    const body = {
+      data: {
+        signIn: localStorage.getItem('signIn'),
+        uid: localStorage.getItem('uid'),
+      },
+    };
+
+    async function fetchAPI() {
+      await Axios.post('https://api.hackwithterminal.study/ttyd/login', body)
+        .then(res => res.json())
+        .then(res => setToken(res.data.token));
+    }
+    fetchAPI();
+    async function startContainer() {
+      await Axios.get(`https://api.hackwithterminal.study/ttyd/:${token}`);
+    }
+
+    startContainer();
+  }, [token]);
 
   return (
     <div>

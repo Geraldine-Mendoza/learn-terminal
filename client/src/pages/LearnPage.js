@@ -7,6 +7,7 @@ import '../CSS/LearnPage.css';
 function LearnPage(props) {
   const [currentPage, setCurrentPage] = useState(1);
   const [token, setToken] = useState('');
+  const [port, setPort] = useState('');
   const arr = props.type === 'bash' ? Constants.BASH_LEARN : Constants.GIT_LEARN;
   const numPages = arr.length;
   var pages = [];
@@ -51,19 +52,29 @@ function LearnPage(props) {
     setCurrentPage(1);
   }, [props.type]);
 
-  // useEffect(() => {
-  //   const body = {
-  //     data: {
-  //       signIn: localStorage.getItem('signIn'),
-  //       uid: localStorage.getItem('uid'),
-  //     },
-  //   };
-  //   async function fetchAPI() {
-  //     await Axios.post('https://api.hackwithterminal.study/ttyd/login', body)
-  //       .then()
-  //   }
-  //   fetchAPI();
-  // }, []);
+  useEffect(() => {
+    const body = {
+      data: {
+        signIn: localStorage.getItem('signIn'),
+        uid: localStorage.getItem('uid'),
+      },
+    };
+    async function fetchAPI() {
+      await Axios.post('https://api.hackwithterminal.study/ttyd/login', body).then(
+        response => (setToken(response.data.token), setPort(response.data.data.port))
+      );
+    }
+    fetchAPI();
+  }, []);
+
+  useEffect(() => {
+    async function getCont() {
+      if (token !== undefined) {
+        Axios.get(`https://api.hackwithterminal.study/ttyd/${token}`);
+      }
+    }
+    getCont();
+  }, []);
 
   return (
     <div>
@@ -85,12 +96,17 @@ function LearnPage(props) {
         {documentation}
         <div className="terminal">
           {/* server: https://api.hackwithterminal.study/ttyd */}
-          <iframe
-            src="https://api.hackwithterminal.study/terminal/mlh/?port=7681"
-            width="100%"
-            height="100%"
-            title="frame"
-          />
+          {port !== '' &&
+            (console.log('here', port),
+            console.log(token),
+            (
+              <iframe
+                src={`https://api.hackwithterminal.study/terminal/${token}/?port=${port}`}
+                width="100%"
+                height="100%"
+                title="frame"
+              />
+            ))}
         </div>
       </div>
     </div>
